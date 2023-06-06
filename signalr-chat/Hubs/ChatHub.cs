@@ -29,7 +29,7 @@ namespace signalr_chat.Hubs
             return base.OnConnectedAsync();
         }
 
-        public override async Task OnDisconnectedAsync(Exception exception)
+        public override async Task OnDisconnectedAsync(Exception? exception)
         {
             string username = Users[Context.ConnectionId];
             bool isTaken = Users.Where(p => p.Value == username).Count() > 1;
